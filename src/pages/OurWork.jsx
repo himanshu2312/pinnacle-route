@@ -1,25 +1,13 @@
 import React from 'react';
-import Navbar from '../components/NavBar';
-import img1 from '../assets/img1.png'
-import img2 from '../assets/img2.png'
-import img3 from '../assets/img3.png'
-import img4 from '../assets/img4.png'
-import img5 from '../assets/img5.png'
-import img6 from '../assets/img6.png'
-import { GoArrowUpRight } from 'react-icons/go';
-import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
+import Footer from '../components/Footer';
+import Navbar from '../components/NavBar';
+import { useSelector } from 'react-redux';
+import classes from './conf/workClasses.json';
+import { GoArrowUpRight } from 'react-icons/go';
 
 const OurWork = () => {
-
-    const gridData = [
-        { id: 1, imgSrc: img1, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#C0EEE1] text-black" },
-        { id: 2, imgSrc: img2, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#1777F7] text-white" },
-        { id: 3, imgSrc: img3, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#A195D3] text-white" },
-        { id: 4, imgSrc: img4, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#030506] text-white" },
-        { id: 5, imgSrc: img5, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#EF5844] text-white" },
-        { id: 6, imgSrc: img6, text: 'Lorem ipsum dolor sit amet consectetur. Nulla.', class: "bg-[#161616] text-white" },
-    ];
+    const works = useSelector(state => state.works); 
 
     return (
         <div className='bg-white'>
@@ -30,8 +18,8 @@ const OurWork = () => {
                     <div className='text-xl mt-4'>Lorem ipsum dolor sit amet consectetur. Imperdiet neque pellentesque ut volutpat in eget nulla sit. Parturient auctor tristique volutpat odio massa fringilla ullamcorper adipiscing. Urna ullamcorper odio adipiscing sagittis.</div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 p-12">
-                    {gridData.map((item, i) => (
-                        <div key={item.id} className={`flex flex-col items-center ${item.class} rounded-xl`}>
+                    {works?.map((item, i) => (
+                        <div key={item.id} className={`flex flex-col items-center ${classes[Math.floor(Math.random() * classes.length)]} rounded-xl`}>
                             <img
                                 src={item.imgSrc}
                                 alt={item.text}

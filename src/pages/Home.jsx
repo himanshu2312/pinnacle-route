@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import Navbar from '../components/NavBar';
-import hero from '../assets/hero banner.jpg'
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
-import bgBubble from '../assets/bg-bubble.png'
-import Showchar from '../components/Showchar';
-import logo from '../assets/logos.png';
-import { GoArrowUpRight } from 'react-icons/go';
-import laptop from '../assets/laptop.png';
-import laptop2 from '../assets/laptop2.png';
-import phone from '../assets/phone.png';
 import bg from '../assets/bg.png';
-import icon from '../assets/icon.png';
-import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
+import logo from '../assets/logos.png';
+import React, { useState } from 'react';
+import { useSelector } from'react-redux';
+import Footer from '../components/Footer';
+import Navbar from '../components/NavBar';
+import hero from '../assets/hero banner.jpg'
+import Showchar from '../components/Showchar';
+import bgBubble from '../assets/bg-bubble.png'
+import { GoArrowUpRight } from 'react-icons/go';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 
 const Home = () => {
     const [isBeginning, setIsBeginning] = useState(true);
@@ -26,111 +23,10 @@ const Home = () => {
         setIsEnd(swiper.isEnd);
     };
 
-    const reviews = [
-        {
-            id: 1,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-        {
-            id: 2,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-        {
-            id: 3,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-        {
-            id: 4,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-        {
-            id: 5,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-        {
-            id: 6,
-            name: 'Matt Cannon',
-            designation: "Lead Developer",
-            review: '“Convallis posuere morbi leo urna molestie at elementum eu facilisis sapien pellentesque habitant morbi tristique senectus et netus et uteu.”',
-            rating: 5,
-        },
-    ];
-
-    const data = [
-        {
-            id: 1,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: phone, // Replace with your image URL
-        },
-        {
-            id: 2,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: laptop, // Replace with your image URL
-        },
-        {
-            id: 3,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: laptop2, // Replace with your image URL
-        },
-    ];
-
-    const gridData = [
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        },
-        {
-            id: 2,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        },
-        {
-            id: 3,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        },
-        {
-            id: 4,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        },
-        {
-            id: 5,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        },
-        {
-            id: 6,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. Ut massa turpis non sem semper euismod tortor rhoncus. Molestie quis sit ligula lectus urna sed vitae tempor.",
-            imageUrl: icon, // Replace with your image URL
-        }
-    ];
-
+    const reviews = useSelector((state) => state.reviews);
+    const services = useSelector((state) => state.services);
+    const homeContent = useSelector((state) => state.homeContent);
+    
     return (
         <div className='bg-black'>
             <Navbar />
@@ -162,7 +58,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="w-full px-16 pb-16 bg-white z-10">
-                {data.map((item, index) => (
+                {homeContent.map((item, index) => (
                     <div key={item.id} className="grid grid-cols-1 md:grid-cols-2 gap-24 mb-12 items-center" >
                         {/* Conditional Rendering for Alternating Layout */}
                         {index % 2 === 0 ? (
@@ -227,7 +123,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 xl:px-28 lg:px-12 md:px-8 px-4 mt-16">
-                    {gridData.map((item) => (
+                    {services.map((item) => (
                         <div
                             key={item.id}
                             className="bg-white shadow-lg rounded-xl p-12 flex flex-col"

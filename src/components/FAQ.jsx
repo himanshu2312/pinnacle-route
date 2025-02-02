@@ -1,36 +1,15 @@
+import hero5 from '../assets/hero5.jpg'
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import Accordion from '@mui/material/Accordion';
 import opened from '../assets/Open Question.png';
 import closed from '../assets/Closed Question.png';
-import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
-import hero5 from '../assets/hero5.jpg'
 
 const FAQ = () => {
     const [expanded, setExpanded] = useState(null);
-
-    const faqData = [
-        {
-            id: 1,
-            title: "Lorem ipsum dolor sit amet consectetur. Venenatis duis mauris sit sed?",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes. ",
-        },
-        {
-            id: 2,
-            title: "Lorem ipsum dolor sit amet consectetur. Venenatis duis mauris sit sed?",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes. ",
-        },
-        {
-            id: 3,
-            title: "Lorem ipsum dolor sit amet consectetur. Venenatis duis mauris sit sed?",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes. ",
-        },
-        {
-            id: 4,
-            title: "Lorem ipsum dolor sit amet consectetur. Venenatis duis mauris sit sed?",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes. ",
-        }
-    ];
+    const faqs = useSelector(state => state.faqs);
 
     return (
         <div className="container mx-auto py-8 bg-black flex flex-col items-center">
@@ -38,7 +17,7 @@ const FAQ = () => {
                 <img className='lg:min-w-full md:min-w-[160%] w-[200%] max-w-[200%]' src={hero5} alt="" srcSet="" />
             </div>
             <div className="max-w-[70%]">
-                {faqData.map((item, index) => (
+                {faqs?.map((item, index) => (
                     <Accordion
                         key={item.id}
                         expanded={expanded === item.id}

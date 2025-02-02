@@ -1,179 +1,13 @@
-import React, { useState } from 'react';
-import Navbar from '../components/NavBar';
-import service from '../assets/Rectangle 22.png'
-import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
+import React, { useState } from 'react';
+import Footer from '../components/Footer';
+import Navbar from '../components/NavBar';
+import { useSelector } from 'react-redux';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 
 const Services = () => {
     const [expanded, setExpanded] = useState(null);
-
-    const data = [
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        },
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    id: 'sasasa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 's323asasa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasasqwqa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasaserera',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        },
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    id: 'sasafdfdsa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasas5454',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasas12121a',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasasewewa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        },
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    id: 'sasas3232a',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sas1asa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: '565654554',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasas1221a',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        },
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    id: 'sasassddsw32a',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sas122121asa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sas344343asa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 's1221122112asasa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        },
-        {
-            id: 1,
-            title: "Design Services",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam.",
-            pointers: [
-                {
-                    id: 'sasafffgfdsa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'xzxzzxzx',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 'sasarereersa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                },
-                {
-                    id: 's121212asasa',
-                    title: "Lorem ipsum",
-                    description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellnec sit nunc phasellus netus aliquam."
-                }
-            ],
-            imageUrl: service, // Replace with your image URL
-        }
-    ];
+    const services = useSelector(state => state.services);
 
     return (
         <div className='bg-black'>
@@ -185,7 +19,7 @@ const Services = () => {
                 </div>
             </div>
             <div className="w-full px-6 md:px-32 py-24 z-10 text-white">
-                {data.map((item, index) => (
+                {services.map((item, index) => (
                     <div
                         key={item.id}
                         className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-24 mb-12 items-center"

@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import rocket from "../assets/rocket.png"
-import rocketBlack from "../assets/rocketBlack.png"
-import { GoArrowUpRight } from "react-icons/go";
 import { useLocation } from 'react-router-dom';
+import { GoArrowUpRight } from "react-icons/go";
+import React, { useEffect, useState } from 'react';
+import rocketBlack from "../assets/rocketBlack.png";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [bgBlack, setBgBlack] = useState(false);
-
     const location = useLocation();
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     useEffect(() => {
         if (location.pathname === '/' || location.pathname === '/about-us') {

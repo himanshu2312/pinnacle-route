@@ -1,10 +1,14 @@
 import { combineReducers } from "redux";
-// import reducer1 from "./reducer1";
-// import reducer2 from "./reducer2";
+import faqs from "./faqsReducer";
+import works from "./worksReducer";
+import reviews from "./reviewsReducer";
+import services from "./servicesReducer";
+import menifestos from "./manifestosReducer";
+import homeContent from "./homeContentReducer";
+import aboutContent from "./aboutContentReducer";
 
 const rootReducer = combineReducers({
-      // 1: reducer1,
-      // 2: reducer2
+      homeContent, reviews, services, aboutContent, menifestos, faqs, works
 });
 
 export default rootReducer;

@@ -1,31 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import image from "../assets/Ellipse.png";
 import Showchar from './Showchar';
-import frame from '../assets/Frame.png';
 import logo from '../assets/logos.png';
+import frame from '../assets/Frame.png';
+import image from "../assets/Ellipse.png";
 import background from '../assets/backcolor.png';
+import React, { useState, useEffect } from 'react';
 
 const HomePageContent = () => {
 	const [screenSize, setScreenSize] = useState(window.innerWidth);
 
-	const handleResize = () => {
-		setScreenSize(window.innerWidth);
-	};
+	const handleResize = () => { setScreenSize(window.innerWidth); };
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
 		handleResize(); // Check on mount
 
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
+		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
 	return (
 		<div className="bg-black text-white min-h-screen overflow-x-hidden">
-
 			<div className="container w-full p-3 pt-24 md:pb-44 w-full">
-
 				{screenSize < 768 ? <MobileLayout /> : screenSize < 1208 ? <TabletLayout /> : <LaptopLayout />}
 			</div>
 		</div>

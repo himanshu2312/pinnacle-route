@@ -1,117 +1,14 @@
-import React, { useState } from 'react';
-import Navbar from '../components/NavBar';
-import about1 from '../assets/about-us-1.png'
-import about2 from '../assets/about-us-2.png'
-import team from '../assets/Rectangle 24.png'
-import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { bindActionCreators } from 'redux';
+import React, { useState } from 'react';
+import Footer from '../components/Footer';
+import Navbar from '../components/NavBar';
+import { useSelector } from 'react-redux';
 
 const AboutUs = () => {
     const [selected, setSelected] = useState(0);
-
-    // const anyState = useSelector(state => state.anyStateReducerName);
-    // const dispatch = useDispatch();
-    // const actions = bindActionCreators(actionCreators, dispatch);
-    const data = [
-        {
-            id: 1,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about1, // Replace with your image URL
-        },
-        {
-            id: 2,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about2, // Replace with your image URL
-        },
-    ];
-
-    const manifestoData = [
-        {
-            id: 1,
-            title: "Lorem ipsum dolor",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about1, // Replace with your image URL
-        },
-        {
-            id: 2,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about2, // Replace with your image URL
-        },
-        {
-            id: 3,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about2, // Replace with your image URL
-        },
-        {
-            id: 4,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about2, // Replace with your image URL
-        },
-        {
-            id: 5,
-            title: "Lorem ipsum dolor sit amet consectetur. Nulla.",
-            description: "Lorem ipsum dolor sit amet consectetur. A auctor purus fermentum nec et sed aliquet. Leo amet tellus nec sit nunc phasellus netus aliquam. Vitae scelerisque nec at ultricies arcu sed maecenas. Ac et quam. Vitae scelerisque nec at’",
-            imageUrl: about2, // Replace with your image URL
-        }
-    ];
-
-    const teamData = [
-        {
-            id: 1,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 2,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 3,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 4,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 1,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 2,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 3,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        },
-        {
-            id: 4,
-            name: "David Cohen",
-            designation: "CEO & Co-Founder",
-            imageUrl: team
-        }
-    ];
+    const team = useSelector(state => state.team);
+    const manifestos = useSelector(state => state.manifestos);
+    const aboutContent = useSelector(state => state.aboutContent);
 
     return (
         <div className='bg-black'>
@@ -123,7 +20,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div className="w-full px-4 md:px-16 pb-16 z-10 text-white">
-                {data.map((item, index) => (
+                {aboutContent?.map((item, index) => (
                     <div
                         key={item.id}
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-24 mb-12 items-center"
@@ -175,7 +72,7 @@ const AboutUs = () => {
                     </div>
                     <div className='h-[2px] bg-gray-600 w-[60px]'></div>
                     <div className='flex flex-col gap-4'>
-                        {manifestoData.map((data, index) => {
+                        {manifestos?.map((data, index) => {
                             return (
                                 <div onMouseEnter={() => setSelected(index)} className='flex items-start gap-6 cursor-pointer'>
                                     <div className={`text-7xl font-bold ${selected === index ? "text-blue-600" : "text-gray-800"}`}>{Math.abs(index) < 9 ? `0${index + 1}` : index + 1}</div>
@@ -209,7 +106,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {teamData.map((item) => (
+                        {team?.map((item) => (
                             <div
                                 key={item.id}
                             >

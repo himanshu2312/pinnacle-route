@@ -1,10 +1,10 @@
+import sign from "../assets/sign.png";
 import React, { useState } from 'react';
-import background2 from "../assets/backcolor2.png";
-import image from "../assets/Ellipse.png";
 import frame from '../assets/Frame.png';
 import phone from '../assets/phone.png';
-import sign from "../assets/sign.png";
 import laptop from "../assets/laptop.png"
+import image from "../assets/Ellipse.png";
+import background2 from "../assets/backcolor2.png";
 
 const RecentW = () => {
   const [activeIndex, setActiveIndex] = useState(0);

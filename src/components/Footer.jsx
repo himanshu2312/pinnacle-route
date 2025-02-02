@@ -1,8 +1,8 @@
 import React from "react";
 import rocket from "../assets/rocket.png"
 import twitter from '../assets/fa-twitter.png';
-import facebook from '../assets/fa-facebook-square.png';
 import google from '../assets/fa-google-plus.png';
+import facebook from '../assets/fa-facebook-square.png';
 
 const Footer = () => {
     return (
