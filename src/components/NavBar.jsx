@@ -18,7 +18,7 @@ const Navbar = () => {
         if (location.pathname === '/' || location.pathname === '/about-us') {
             setBgBlack(true);
         }
-    }, [])
+    }, [location.pathname])
 
     return (
         <nav className={`sticky top-0 z-50 shadow-lg border-b border-gray-500 h-auto py-1 md:py-3 ${bgBlack ? "bg-black" : "bg-white"}`}>
@@ -40,7 +40,6 @@ const Navbar = () => {
                     <a href="/about-us" className={`transition-all duration-400 hover:scale-105 ${location.pathname === '/about-us' ? 'selected-tab' : ''} mt-4`}>About Us</a>
                     <a href="/services" className={`transition-all duration-400 hover:scale-105 ${location.pathname === '/services' ? 'selected-tab' : ''} mt-4`}>Services</a>
                     <a href="/our-work" className={`transition-all duration-400 hover:scale-105 ${location.pathname === '/our-work' ? 'selected-tab' : ''} mt-4`}>Our Work</a>
-                    {/* <a href="/faq" className={`transition-all duration-400 hover:scale-105 ${location.pathname === '/faq' ? 'selected-tab' : ''} mt-4`}>FAQ</a> */}
                     <a href="/contact-us" className={`border ${bgBlack ? "border-white hover:bg-white hover:text-black" : "border-black hover:bg-black hover:text-white"} px-4 py-2 transition-all duration-400 inline-flex items-center ${location.pathname === '/contact-us' ? 'selected-tab' : ''} mt-4`}>
                         <div>Contact Us</div>
                         <GoArrowUpRight className="ml-1" />
@@ -62,7 +61,6 @@ const Navbar = () => {
                     <a href="/about-us" className="block px-4 py-2 hover:bg-gray-700 transition-colors duration-400">About Us</a>
                     <a href="/services" className="block px-4 py-2 hover:bg-gray-700 transition-colors duration-400">Services</a>
                     <a href="/our-work" className="block px-4 py-2 hover:bg-gray-700 transition-colors duration-400">Our Work</a>
-                    {/* <a href="/faq" className="block px-4 py-2 hover:bg-gray-700 transition-colors duration-400">FAQ</a> */}
                     <a href="/contact-us" className="block border-t border-gray-500 px-4 py-2 hover:bg-gray-700 transition-colors duration-400">Contact Us</a>
                 </div>
             )}

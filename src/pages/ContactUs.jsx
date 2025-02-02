@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../components/NavBar';
-import img from '../assets/contact-us.png'
-import { GoArrowUpRight } from 'react-icons/go';
 import Footer from '../components/Footer';
-import FAQ from '../components/FAQ';
 
 const ContactUs = () => {
 

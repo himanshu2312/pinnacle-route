@@ -23,9 +23,9 @@ const Footer = () => {
                     <a href="http://" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                     <a className="sm:ml-10 ml-0 sm:mt-0 mt-1" href="http://" target="_blank" rel="noopener noreferrer">Terms</a>
                     <div className="flex items-center sm:mt-0 mt-4">
-                        <a className="sm:ml-10 ml-0" href="http://" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="" srcset="" /></a>
-                        <a className="ml-10" href="http://" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="" srcset="" /></a>
-                        <a className="ml-10" href="http://" target="_blank" rel="noopener noreferrer"><img src={google} alt="" srcset="" /></a>
+                        <a className="sm:ml-10 ml-0" href="http://" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="" srcSet="" /></a>
+                        <a className="ml-10" href="http://" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="" srcSet="" /></a>
+                        <a className="ml-10" href="http://" target="_blank" rel="noopener noreferrer"><img src={google} alt="" srcSet="" /></a>
                     </div>
                 </div>
             </div>
@@ -33,4 +33,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;

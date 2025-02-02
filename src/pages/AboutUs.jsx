@@ -3,13 +3,17 @@ import Navbar from '../components/NavBar';
 import about1 from '../assets/about-us-1.png'
 import about2 from '../assets/about-us-2.png'
 import team from '../assets/Rectangle 24.png'
-import { GoArrowUpRight } from 'react-icons/go';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 
 const AboutUs = () => {
     const [selected, setSelected] = useState(0);
 
+    // const anyState = useSelector(state => state.anyStateReducerName);
+    // const dispatch = useDispatch();
+    // const actions = bindActionCreators(actionCreators, dispatch);
     const data = [
         {
             id: 1,

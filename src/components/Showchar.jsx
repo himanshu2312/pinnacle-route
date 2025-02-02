@@ -26,7 +26,7 @@ const Showchar = () => {
 
         {/* Tracked Revenue */}
         <div className="w-full max-w-xs flex flex-col items-center justify-center">
-          <p className="text-6xl font-semibold leading-none"><spav>150M</spav><span className="text-yellow-500">+</span></p>
+          <p className="text-6xl font-semibold leading-none"><span>150M</span><span className="text-yellow-500">+</span></p>
           <p className="text-2xl font-light text-center mt-2">In Tracked Revenue</p>
         </div>
       </div>

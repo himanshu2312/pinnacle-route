@@ -34,44 +34,44 @@ const FAQ = () => {
 
     return (
         <div className="container mx-auto py-8 bg-black flex flex-col items-center">
-        <div className='w-full overflow-hidden flex justify-center items-center'>
-            <img className='lg:min-w-full md:min-w-[160%] w-[200%] max-w-[200%]' src={hero5} alt="" srcset="" />
-        </div>
-        <div className="max-w-[70%]">
-            {faqData.map((item, index) => (
-                <Accordion
-                    key={item.id}
-                    expanded={expanded === item.id}
-                    onChange={() => setExpanded(expanded === item.id ? null : item.id)}
-                    sx={{
-                        backgroundColor: "black",
-                        boxShadow: "none",
-                        borderBottom: "1px solid rgba(255, 255, 255, 0.7)",
-                        marginBottom: "16px",
-                        paddingTop: index === 0 ? 0 : "1.2rem",
-                        paddingBottom: "2rem"
-                    }}
-                >
-                    <AccordionSummary
+            <div className='w-full overflow-hidden flex justify-center items-center'>
+                <img className='lg:min-w-full md:min-w-[160%] w-[200%] max-w-[200%]' src={hero5} alt="" srcSet="" />
+            </div>
+            <div className="max-w-[70%]">
+                {faqData.map((item, index) => (
+                    <Accordion
+                        key={item.id}
+                        expanded={expanded === item.id}
+                        onChange={() => setExpanded(expanded === item.id ? null : item.id)}
                         sx={{
-                            color: "white",
-                            fontWeight: "bold",
+                            backgroundColor: "black",
+                            boxShadow: "none",
+                            borderBottom: "1px solid rgba(255, 255, 255, 0.7)",
+                            marginBottom: "16px",
+                            paddingTop: index === 0 ? 0 : "1.2rem",
+                            paddingBottom: "2rem"
                         }}
                     >
-                        <div className="w-full flex justify-between items-center sm:text-2xl text-md">
-                            <div className="max-w-[90%]">
-                                {item.title}
+                        <AccordionSummary
+                            sx={{
+                                color: "white",
+                                fontWeight: "bold",
+                            }}
+                        >
+                            <div className="w-full flex justify-between items-center sm:text-2xl text-md">
+                                <div className="max-w-[90%]">
+                                    {item.title}
+                                </div>
+                                <img className="h-[30px] w-[30px]" src={expanded === item.id ? opened : closed} alt="" />
                             </div>
-                            <img className="h-[30px] w-[30px]" src={expanded === item.id ? opened : closed} alt="" />
-                        </div>
-                    </AccordionSummary>
-                    <AccordionDetails sx={{ color: "white" }}>
-                        <div className="text-xl">{item.content}</div>
-                    </AccordionDetails>
-                </Accordion>
-            ))}
+                        </AccordionSummary>
+                        <AccordionDetails sx={{ color: "white" }}>
+                            <div className="text-xl">{item.content}</div>
+                        </AccordionDetails>
+                    </Accordion>
+                ))}
+            </div>
         </div>
-    </div>
     )
 }
 

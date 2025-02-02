@@ -44,44 +44,40 @@ const RecentW = () => {
         </div>
       </div>
       <div className='relative p-3 md:p-6 flex flex-col items-center mt-6 max-w-screen-2xl mx-auto gap-10 md:gap-20 lg:gap-44'>
-  {/* Background Image */}
-  <img 
-    src={background2} 
-    className='absolute inset-y-0 left-0 md:w-1/2 w-full object-cover z-0' 
-    alt="Background" 
-  />
+        {/* Background Image */}
+        <img
+          src={background2}
+          className='absolute inset-y-0 left-0 md:w-1/2 w-full object-cover z-0'
+          alt="Background"
+        />
 
-  {/* Overlay Content */}
-  <div className='relative md:pl-9 md:ml-28 z-10 flex flex-col md:flex-row justify-between items-center w-full md:w-[1400px] lg-[500px] gap-5 md:gap-0'>
-    
-    {/* Experience & Project Done Info */}
-    <div className='new md:pl-8 flex items-center gap-10 w-full md:w-auto justify-center lg:justify-between md:justify-center md:mb-14 md:pb-6'>
-      <div className='flex flex-col items-center gap-2'>
-        <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white'>10</p>
-        <p className='text-gray-300 text-center md:text-left'>Years of Experience</p>
+        {/* Overlay Content */}
+        <div className='relative md:pl-9 md:ml-28 z-10 flex flex-col md:flex-row justify-between items-center w-full md:w-[1400px] lg-[500px] gap-5 md:gap-0'>
+
+          {/* Experience & Project Done Info */}
+          <div className='new md:pl-8 flex items-center gap-10 w-full md:w-auto justify-center lg:justify-between md:justify-center md:mb-14 md:pb-6'>
+            <div className='flex flex-col items-center gap-2'>
+              <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white'>10</p>
+              <p className='text-gray-300 text-center md:text-left'>Years of Experience</p>
+            </div>
+            <div className='flex flex-col items-center md:items-start gap-2'>
+              <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white'>113+</p>
+              <p className='text-gray-300 text-center md:text-left'>Project Done</p>
+            </div>
+          </div>
+
+          {/* Laptop Image */}
+          <div className='mt-8 md:mt-0 flex flex-col items-center w-full md:w-auto md:justify-end md:bottom-28 relative'>
+            <img src={laptop} alt="Laptop" className='w-72  sm:w-80 md:w-[600px]  lg:w-[800px] xl:w-[700px] md:h-[500px]' />
+
+            {/* Tag Section */}
+            <div className='tag w-4/3 md:w-[600px] lg:w-[600px] xl:w-[700px] mt-5 md:mt-4 flex justify-between text-center text-sm md:text-base gap-7 '>
+              <p className='text-gray-100 font-bold md:text-xl'>Lorem ipsum dolor</p>
+              <p className='text-gray-500 md:text-xl'>Website and Tablet</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className='flex flex-col items-center md:items-start gap-2'>
-        <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white'>113+</p>
-        <p className='text-gray-300 text-center md:text-left'>Project Done</p>
-      </div>
-    </div>
-
-    {/* Laptop Image */}
-    <div className='mt-8 md:mt-0 flex flex-col items-center w-full md:w-auto md:justify-end md:bottom-28 relative'>
-      <img src={laptop} alt="Laptop" className='w-72  sm:w-80 md:w-[600px]  lg:w-[800px] xl:w-[700px] md:h-[500px]' />
-
-      {/* Tag Section */}
-      <div className='tag w-4/3 md:w-[600px] lg:w-[600px] xl:w-[700px] mt-5 md:mt-4 flex justify-between text-center text-sm md:text-base gap-7 '>
-        <p className='text-gray-100 font-bold md:text-xl'>Lorem ipsum dolor</p>
-        <p className='text-gray-500 md:text-xl'>Website and Tablet</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
     </div>
   );
 }

@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/NavBar';
-import about1 from '../assets/about-us-1.png'
-import about2 from '../assets/about-us-2.png'
 import service from '../assets/Rectangle 22.png'
-import team from '../assets/Rectangle 24.png'
-import { GoArrowUpRight } from 'react-icons/go';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
-import opened from '../assets/Open Question.png';
-import closed from '../assets/Closed Question.png';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 
 const Services = () => {
